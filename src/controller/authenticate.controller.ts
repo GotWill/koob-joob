@@ -16,6 +16,8 @@ export class AuthenticateController {
   async handle(@Body() body: Prisma.AutCreateInput) {
     const { email, password } = body;
 
+    //Inserir manualmente usuario e senha com hash no banco para funcionar
+
     const userExist = await this.prismaService.aut.findUnique({
       where: {
         email,
